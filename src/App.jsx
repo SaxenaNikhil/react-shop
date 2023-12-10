@@ -1,12 +1,9 @@
-import Navbar from "./components/Navbar";
+import Navbar from "./components/nav/Navbar";
 
 export default function App() {
   return (
-    <>
+    <div className="wrapper bg-dark text-white">
       <Navbar/>
-      <h1>Hello World</h1>
-      <p>Welcome to the course!</p>
-      <i className="bi bi-activity"></i>
-    </>
+    </div>
   );
 }
