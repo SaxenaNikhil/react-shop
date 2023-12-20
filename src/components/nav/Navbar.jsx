@@ -17,7 +17,7 @@ export default function Navbar () {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <CategorySelector/>
                     <SearchBar/>
-                    {/* <CartButton/> */}
+                    <CartButton/>
                 </div>
             </div>
         </nav>
