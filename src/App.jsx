@@ -1,5 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/nav/Navbar";
+import Home from "./pages/Home";
+import Single from "./pages/Single";
+import Cart from "./pages/Cart";
 
 export default function App() {
   return (
@@ -9,9 +12,9 @@ export default function App() {
         {/* This is the body of the app.jsx */}
         {/* Here we are creating separate pages for the application */}
         <Routes>
-          <Route path="/" element={<h2>Home Component!</h2>}/>
-          <Route path="/single" element={<h2>Single Component!</h2>}/>
-          <Route path="/cart" element={<h2>Cart Component!</h2>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/single/:id" element={<Single/>}/>
+          <Route path="/cart" element={<Cart/>}/>
         </Routes>
       </div>
     </div>
