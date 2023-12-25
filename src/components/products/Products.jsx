@@ -3,7 +3,7 @@ export default function Products ({products=[]}) {
         <div>
             <ul>
                 {products.map((product) => (
-                    <li>{product.name}</li>
+                    <li key={product.id}>{product.name}</li>
                 ))}
             </ul>
         </div>
