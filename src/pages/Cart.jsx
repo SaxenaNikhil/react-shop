@@ -1,5 +1,7 @@
+import NoContent from "../components/extra/NoContent";
+
 export default function Cart() {
     return (
-        <h1> Cart Component! </h1>
+        <NoContent text="Nothing In Your Cart" btnText="Browse Products"/>
     )
 }
