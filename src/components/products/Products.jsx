@@ -1,9 +1,11 @@
+import Product from "./Product";
+
 export default function Products ({products=[]}) {
     return (
         <div>
             <ul>
                 {products.map((product) => (
-                    <li key={product.id}>{product.name}</li>
+                    <Product key={product.id} product={product}/>
                 ))}
             </ul>
         </div>
