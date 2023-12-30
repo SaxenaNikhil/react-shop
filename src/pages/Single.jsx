@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom"
 import data from "../data"
+import ProductButton from "../components/products/productButton"
+import Line from "../components/extra/Line"
+import Products from "../components/products/Products"
 
 export default function Single() {
 
@@ -9,14 +12,26 @@ export default function Single() {
     // console.log(product)
 
     return (
-        <div className="row">
-            <div className="col-6">
-                <img src={require(`../images/${product.id}.jpg`)} className="w-50" />
+        <div>
+            <div id="single" className="row justify-content-center align-items-center text-white mx-auto">
+                <div className="col-md-6">
+                    <img src={require(`../images/${product.id}.jpg`)}
+                        alt=""
+                        className="card-img-top mb-5 mb-md-0 p-0 p-lg-5" 
+                    />
+                </div>
+                <div className="col-md-6 text-center text-md-start">
+                    <h2 className="fs-1 fw-bold">{product.name}</h2>
+                    <div className="fs-5 mb-2">{product.price}</div>
+                    <p className="lead">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem non officiis deserunt quas amet alias sapiente dolorum sed est, aliquid eum, delectus quidem eos quaerat dolor nostrum voluptatum iste laboriosam!
+                    </p>
+                    <ProductButton/>
+                </div>
             </div>
-            <div className="col-6">
-                <h2>{product.name}</h2>
-                <h3>{product.price}</h3>
-            </div>
+            <Line/>
+            <h2 className="text-white my-4 text-center">Similar Products like This</h2>
+            <Products products={data.slice(0,4)}/>
         </div>
     )
 }
