@@ -30,6 +30,7 @@ export default function Single() {
                 </div>
             </div>
             <Line/>
+            {/* Here we are showing the similar products not based on the suggestions but basically we have trimmed the list of products for now for temporary suggestion will implement this feature through the reducer redux concept. */}
             <h2 className="text-white my-4 text-center">Similar Products like This</h2>
             <Products products={data.slice(0,4)}/>
         </div>
