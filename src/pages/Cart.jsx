@@ -1,4 +1,5 @@
 import CartItem from "../components/cart/cartItem";
+import CartNumbers from "../components/cart/cartNumbers";
 import NoContent from "../components/extra/NoContent";
 import data from "../data";
 
@@ -15,9 +16,9 @@ export default function Cart() {
                     <h4 className="mb-3 px-1">Cart</h4>
                     <ul className="list-group mb-3 cart-list">
                         {items.map((i) => <CartItem key={i.id} item={i} />)}
-                        {/* Cart Numbers */}
-                        {/* Cart Button */}
                     </ul>
+                    <CartNumbers/>
+                    {/* Cart Button */}
                 </div>
             </div>
         </div>
