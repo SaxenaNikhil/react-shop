@@ -1,3 +1,4 @@
+import CartBuyButton from "../components/cart/cartBuyButton";
 import CartItem from "../components/cart/cartItem";
 import CartNumbers from "../components/cart/cartNumbers";
 import NoContent from "../components/extra/NoContent";
@@ -5,7 +6,7 @@ import data from "../data";
 
 export default function Cart() {
 
-    const items = data.slice(0, 3);
+    const items = data.slice(0, 1);
 
     if(items.length === 0) return <NoContent text="Nothing In Your Cart" btnText="Browse Products"/>
      
@@ -18,7 +19,7 @@ export default function Cart() {
                         {items.map((i) => <CartItem key={i.id} item={i} />)}
                     </ul>
                     <CartNumbers/>
-                    {/* Cart Button */}
+                    <CartBuyButton/>
                 </div>
             </div>
         </div>
