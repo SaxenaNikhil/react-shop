@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import data  from "../../data";
 
 //This the product store
 
@@ -7,9 +8,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const { actions, reducer } = createSlice({
     //this is the name of the slice
     name : "products",
-    //this initial state hold all our data
+    //Here the productsFromSearch is pointed to the data that we have, which is kind of replacement for the data from the API
+    //this initial state hold all our data from the list of data that we have
     initialState : {
-        products : ["socks", "shoes"]
+        products : data,
+        productsFromSearch : data
     },
     //these actions will update the state
     reducers : {
