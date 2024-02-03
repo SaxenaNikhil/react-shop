@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data  from "../../data";
 import { uniq } from 'lodash';
+import { loremIpsum } from 'lorem-ipsum'
+
+//updating the data description to the random lorem ipsum text
+data.forEach(d => d.description = loremIpsum())
 
 //Working on the categories
 const DEFAULT_CATEGORY = "All"
@@ -22,7 +26,9 @@ export const { actions, reducer } = createSlice({
         products : data,
         productsFromSearch : data,
         categories : [DEFAULT_CATEGORY, ...categories],
-        selectedCategory : DEFAULT_CATEGORY
+        selectedCategory : DEFAULT_CATEGORY,
+        single : data[0],
+        singleSimilarProducts : data.slice(0, 4)
     },
     //these actions will update the state
     reducers : {
