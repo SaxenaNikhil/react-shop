@@ -1,5 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data  from "../../data";
+import { uniq } from 'lodash';
+
+//Working on the categories
+const DEFAULT_CATEGORY = "All"
+
+//Now on this we will call a sort() function which will sort the element in a alphabetical order
+//Here uniq is a method which creates a duplicate free array
+const categories = (uniq(data.map((product) => product.category))).sort()
 
 //This the product store
 
@@ -12,7 +20,9 @@ export const { actions, reducer } = createSlice({
     //this initial state hold all our data from the list of data that we have
     initialState : {
         products : data,
-        productsFromSearch : data
+        productsFromSearch : data,
+        categories : [DEFAULT_CATEGORY, ...categories],
+        selectedCategory : DEFAULT_CATEGORY
     },
     //these actions will update the state
     reducers : {

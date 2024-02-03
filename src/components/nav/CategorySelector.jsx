@@ -1,6 +1,10 @@
+import { useSelector } from 'react-redux'
+
 export default function CategorySelector() {
-    const title = "All"
-    const categories = ["All", "Jackets", "Scarfs", "Gloves", "Hats", "Socks"]
+    
+    //Here we are basically destructuring the categories and selectedCategory to get the values
+    //Here we are getting values of categories and selectedCategory by using the useSelector hook
+    const { categories, selectedCategory } = useSelector(state => state.products)
 
     return (
         //since we are using bootstrap in this application so we will use the bootstrap classes
@@ -11,7 +15,7 @@ export default function CategorySelector() {
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
             >
-                { title }
+                { selectedCategory }
             </button>
             <ul className="dropdown-menu">
                 {categories.map ((category, i) => (
