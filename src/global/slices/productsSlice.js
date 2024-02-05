@@ -28,7 +28,8 @@ export const { actions, reducer } = createSlice({
         categories : [DEFAULT_CATEGORY, ...categories],
         selectedCategory : DEFAULT_CATEGORY,
         single : data[0],
-        singleSimilarProducts : data.slice(0, 4)
+        singleSimilarProducts : data.slice(0, 4),
+        searchTerm : "Hello World"
     },
     //these actions will update the state
     reducers : {
