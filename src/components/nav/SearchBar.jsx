@@ -1,5 +1,6 @@
 // import { useState } from "react"
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { actions as productsActions } from '../../global/slices/productsSlice'
 
 export default function SearchBar () {
 
@@ -14,14 +15,16 @@ export default function SearchBar () {
 
     const { searchTerm } =  useSelector(state => state.products) 
 
+    const dispatch = useDispatch()
+
     return (
         <form onSubmit={(e) => e.preventDefault()} className="d-flex ms-0 ms-lg-3">
             <input 
-                type="text"
+                type="search"
                 placeholder="Search Products"
                 className="form-control ms-md-auto me-2"
-                // here we will keep track of items we will be searching so we will be using the useState hooks
-                onChange={() => {}}
+                //Here we are using the dispatch to give what user has typed in inside of e.target.value through actions to pass the input to setSearchTerm as payload
+                onChange={(e) => { dispatch(productsActions.setSearchTerm(e.target.value)) }}
                 value={searchTerm}
             />
         </form>

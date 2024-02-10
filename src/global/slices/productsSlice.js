@@ -29,18 +29,17 @@ export const { actions, reducer } = createSlice({
         selectedCategory : DEFAULT_CATEGORY,
         single : data[0],
         singleSimilarProducts : data.slice(0, 4),
-        searchTerm : "Hello World"
+        searchTerm : ""
     },
     //these actions will update the state
     reducers : {
-        //payload is basically what the user passes in 
-        //here this function will take the state and the payload
-        addProduct (state, { payload }) {
-            state.products.push(payload)
-        },
-        //as we just need to clear the products so we will only take the state as there is no use of payload
-        clearProducts (state) {
-            state.products = []
+        // Here in the second argument from action we are destructuring the payload only. For now payload basically is what the user types in.
+        // Here in the arguments state basically is the whole initial state mentioned above
+        //Here this setSearchTerm store will receive the actions dispatched from the searchBar input on change
+        // Here this function for the search part of the application
+        setSearchTerm (state, {payload:searchTerm}) {
+            //Here we have reassigned the payload to the searchTerm
+            state.searchTerm = searchTerm
         }
     }
 })
